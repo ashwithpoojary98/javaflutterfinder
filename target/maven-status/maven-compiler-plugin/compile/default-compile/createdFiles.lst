@@ -1,0 +1,11 @@
+com\testsigma\flutter\finders\ByType.class
+com\testsigma\flutter\finders\BySemanticsLabel.class
+com\testsigma\flutter\finders\ByDescendant.class
+com\testsigma\flutter\finders\ByToolTip.class
+com\testsigma\flutter\finders\ByValueKey.class
+com\testsigma\flutter\FlutterElement.class
+com\testsigma\flutter\example\FlutterFinderExample.class
+com\testsigma\flutter\FlutterFinder.class
+com\testsigma\flutter\finders\PageBack.class
+com\testsigma\flutter\finders\ByAncestor.class
+com\testsigma\flutter\finders\ByText.class
