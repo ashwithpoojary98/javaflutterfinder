@@ -1,8 +1,9 @@
-package com.ashwith.flutter;
+package io.github.ashwith.flutter;
 
 
 import com.ashwith.flutter.finders.*;
 import com.google.common.collect.ImmutableMap;
+import io.github.ashwith.flutter.finders.*;
 import org.openqa.selenium.remote.FileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 

@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>io.ashwith.flutter.appiumfinder</groupId>
+    <groupId>io.github.ashwithpoojary98.flutter.appiumfinder</groupId>
     <artifactId>appium-flutterfinder-java</artifactId>
     <version>0.0.1 SNAPSHOT</version>
     <build>
@@ -16,11 +16,23 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <packaging>jar</packaging>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Flutter finder plugin for Appium in java</description>
+    <url>https://github.com/ashwithpoojary98/javaflutterfinder</url>
     <licenses>
         <license>
             <name>MIT License</name>
@@ -28,12 +40,22 @@
         </license>
     </licenses>
 
+
     <developers>
         <developer>
             <name>ashwith</name>
             <email>ashwithpoojary98@gmail.com</email>
+            <organization>ashwithpoojary98</organization>
+            <organizationUrl>https://github.com/ashwithpoojary98/javaflutterfinder</organizationUrl>
         </developer>
     </developers>
+    <scm>
+        <connection>scm:git:git://github.com/ashwithpoojary98/javaflutterfinder.git</connection>
+        <developerConnection>scm:git:ssh://github.com:ashwithpoojary98/javaflutterfinder.git</developerConnection>
+        <url>https://github.com/ashwithpoojary98/javaflutterfinder</url>
+    </scm>
+
+
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -64,4 +86,14 @@
             <version>${testng.version}</version>
         </dependency>
     </dependencies>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 </project>

@@ -1,6 +1,6 @@
-package com.ashwith.flutter.finders;
+package io.github.ashwith.flutter.finders;
 
-import com.ashwith.flutter.FlutterElement;
+import io.github.ashwith.flutter.FlutterElement;
 
 /**
  * To identify the element using Value key

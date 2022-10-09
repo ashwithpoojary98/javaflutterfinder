@@ -1,6 +1,6 @@
-package com.ashwith.flutter.example;
+package io.github.ashwith.flutter.example;
 
-import com.ashwith.flutter.FlutterFinder;
+import io.github.ashwith.flutter.FlutterFinder;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;

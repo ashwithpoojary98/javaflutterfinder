@@ -1,4 +1,4 @@
-package com.ashwith.flutter;
+package io.github.ashwith.flutter;
 
 
 import com.google.gson.Gson;
