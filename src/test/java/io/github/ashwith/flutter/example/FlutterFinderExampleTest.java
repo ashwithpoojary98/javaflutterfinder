@@ -29,7 +29,8 @@ public class FlutterFinderExampleTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
-    @Test
+    //Todo avoid run
+    @Test(alwaysRun = false)
    public void appiumFlutterTest() {
         FlutterFinder finder = new FlutterFinder(driver);
         WebElement element = finder.byValueKey("increment");
