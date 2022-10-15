@@ -8,9 +8,9 @@ Add maven dependency to pom.xml
 
 ```xml
 <dependency>
-  <groupId>io.github.ashwithpoojary98</groupId>
-  <artifactId>appium_flutterfinder_java</artifactId>
-  <version>0.0.1</version>
+    <groupId>io.github.ashwithpoojary98</groupId>
+    <artifactId>appium_flutterfinder_java</artifactId>
+    <version>1.0.0</version>
 </dependency>
 ```
 
