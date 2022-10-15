@@ -6,7 +6,7 @@ import io.github.ashwith.flutter.FlutterElement;
  * To identify the element using ToolTip
  *
  * @author ashwith
- * @version 0.0.1
+ * @version 1.0.0
  */
 public interface ByToolTip {
 

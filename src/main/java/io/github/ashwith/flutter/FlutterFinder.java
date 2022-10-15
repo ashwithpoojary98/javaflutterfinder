@@ -1,7 +1,6 @@
 package io.github.ashwith.flutter;
 
 
-
 import com.google.common.collect.ImmutableMap;
 import io.github.ashwith.flutter.finders.*;
 import org.openqa.selenium.remote.FileDetector;
@@ -15,7 +14,7 @@ import java.util.regex.Pattern;
  * Flutter finder implementation of different type of flutter element finder
  *
  * @author ashwith
- * @version 0.0.1
+ * @version 1.0.0
  */
 public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByAncestor, ByDescendant, BySemanticsLabel, PageBack {
     RemoteWebDriver driver;
@@ -51,26 +50,35 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
 
     @Override
     public FlutterElement byType(String type) {
-        return new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement = new FlutterElement(ImmutableMap.of(
                 FINDER_TYPE, "ByType",
                 "type", type
         ));
+        flutterElement.setParent(driver);
+        flutterElement.setFileDetector(fileDetector);
+        return flutterElement;
     }
 
     @Override
     public FlutterElement byToolTip(String toolTipText) {
-        return new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement= new FlutterElement(ImmutableMap.of(
                 FINDER_TYPE, "ByTooltipMessage",
                 "text", toolTipText
         ));
+        flutterElement.setParent(driver);
+        flutterElement.setFileDetector(fileDetector);
+        return flutterElement;
     }
 
     @Override
     public FlutterElement byText(String input) {
-        return new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement= new FlutterElement(ImmutableMap.of(
                 FINDER_TYPE, "ByText",
                 "text", input
         ));
+        flutterElement.setParent(driver);
+        flutterElement.setFileDetector(fileDetector);
+        return flutterElement;
     }
 
     @Override
@@ -82,7 +90,10 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
         ));
         matchIdentifier.put("of", of.getRawMap());
         matchIdentifier.put("matching", matching.getRawMap());
-        return new FlutterElement(matchIdentifier);
+        FlutterElement flutterElement= new FlutterElement(matchIdentifier);
+        flutterElement.setParent(driver);
+        flutterElement.setFileDetector(fileDetector);
+        return flutterElement;
     }
 
     @Override
@@ -94,25 +105,34 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
         ));
         matchIdentifier.put("of", of.getRawMap());
         matchIdentifier.put("matching", matching.getRawMap());
-        return new FlutterElement(matchIdentifier);
+        FlutterElement flutterElement= new FlutterElement(matchIdentifier);
+        flutterElement.setParent(driver);
+        flutterElement.setFileDetector(fileDetector);
+        return flutterElement;
     }
 
     @Override
     public FlutterElement bySemanticsLabel(String label) {
-        return new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement= new FlutterElement(ImmutableMap.of(
                 FINDER_TYPE, "BySemanticsLabel",
                 "isRegExp", false,
                 "label", label
         ));
+        flutterElement.setParent(driver);
+        flutterElement.setFileDetector(fileDetector);
+        return flutterElement;
     }
 
     @Override
     public FlutterElement bySemanticsLabel(Pattern label) {
-        return new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement =new FlutterElement(ImmutableMap.of(
                 FINDER_TYPE, "BySemanticsLabel",
                 "isRegExp", true,
                 "label", label.toString()
         ));
+        flutterElement.setParent(driver);
+        flutterElement.setFileDetector(fileDetector);
+        return flutterElement;
     }
 
     @Override

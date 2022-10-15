@@ -15,14 +15,14 @@ import java.util.Objects;
  * Implement FlutterElement extending RemoteWebElement to enable common Mobile element operations such as click, enter e.t.c on FlutterElement objects
  *
  * @author ashwith
- * @version 0.0.1
+ * @version 1.0.0
  */
 public class FlutterElement extends RemoteWebElement {
 
     private final Map<String, Object> rawMap;
     private final Gson gson = new Gson();
 
-    public FlutterElement(final Map<String, Object> rawMap) {
+    protected FlutterElement(final Map<String, Object> rawMap) {
         this.rawMap = rawMap;
         id = serialize(rawMap);
     }
@@ -32,7 +32,7 @@ public class FlutterElement extends RemoteWebElement {
      *
      * @return raw data map
      */
-    public Map<String, Object> getRawMap() {
+    protected Map<String, Object> getRawMap() {
         return rawMap;
     }
 
@@ -42,7 +42,7 @@ public class FlutterElement extends RemoteWebElement {
      * @param rawMap serializing map
      * @return Stringify map
      */
-    public String serialize(final Map<String, Object> rawMap) {
+    private String serialize(final Map<String, Object> rawMap) {
         final JsonPrimitive localInstance = new JsonPrimitive(false);
         Map<String, Object> tempMap = new HashMap<>();
         rawMap.forEach(

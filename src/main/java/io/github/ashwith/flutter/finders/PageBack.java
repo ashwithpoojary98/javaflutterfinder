@@ -6,7 +6,7 @@ import io.github.ashwith.flutter.FlutterElement;
  * To navigate back to previous page
  *
  * @author ashwith
- * @version 0.0.1
+ * @version 1.0.0
  */
 public interface PageBack {
 

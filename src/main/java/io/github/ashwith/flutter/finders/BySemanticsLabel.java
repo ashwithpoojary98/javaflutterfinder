@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 /**
  * To identify the element using SemanticsLabel
  * @author ashwith
- * @version 0.0.1
+ * @version 1.0.0
  */
 public interface BySemanticsLabel {
 
