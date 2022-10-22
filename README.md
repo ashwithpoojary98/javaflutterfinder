@@ -1,7 +1,7 @@
 # Appium Futter Finder Java
 Flutter appium driver is automation tool with java implemantation.
 
-# maven-plugin [![Build Status](https://travis-ci.org/uphy/svg-maven-plugin.svg?branch=develop)](https://travis-ci.org/uphy/svg-maven-plugin)
+# maven-plugin
 
 ## Setup
 Add maven dependency to pom.xml
