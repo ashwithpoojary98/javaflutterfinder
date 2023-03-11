@@ -2,7 +2,7 @@
 Flutter appium driver is automation tool with java implemantation.
 
 # maven-plugin
-
+[![Build Status](https://github.com/ashwithpoojary98/javaflutterfinder/actions/workflows/mavenbuild.yml/badge.svg)](https://github.com/ashwithpoojary98/javaflutterfinder/actions/workflows/mavenbuild.yml)
 ## Setup
 Add maven dependency to pom.xml
 
