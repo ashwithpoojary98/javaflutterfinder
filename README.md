@@ -18,7 +18,9 @@ Add maven dependency to pom.xml
 
 ```java
 
-    public class FlutterFinderExampleTest {
+import io.appium.java_client.AppiumDriver;
+
+public class FlutterFinderExampleTest {
     RemoteWebDriver driver;
 
     @BeforeMethod
@@ -29,12 +31,12 @@ Add maven dependency to pom.xml
         capabilities.setCapability("noReset", true);
         capabilities.setCapability("app", "");
         capabilities.setCapability("automationName", "Flutter");
-        driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+        driver = new AppiumDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
     @Test
-   public void appiumFlutterTest() {
+    public void appiumFlutterTest() {
         FlutterFinder finder = new FlutterFinder(driver);
         WebElement element = finder.byValueKey("increment");
         element.click();
@@ -61,7 +63,7 @@ Add maven dependency to pom.xml
 9. bySemanticsLabel(Pattern label)
 
 
-### flutter CommonFinders
+### Flutter Common Finders
 https://api.flutter.dev/flutter/flutter_test/CommonFinders-class.html
 
 ### More about flutter finder
