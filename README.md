@@ -10,10 +10,13 @@ Add maven dependency to pom.xml
 <dependency>
     <groupId>io.github.ashwithpoojary98</groupId>
     <artifactId>appium_flutterfinder_java</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
+## Maven Center Repo link
+
+https://mvnrepository.com/artifact/io.github.ashwithpoojary98/appium_flutterfinder_java
 ## Usage
 
 ```java
