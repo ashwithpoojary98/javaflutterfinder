@@ -1,5 +1,10 @@
-# Appium Futter Finder Java
-Flutter appium driver is automation tool with java implemantation.
+# Appium Flutter Finder Java
+Flutter appium driver is automation tool with java implementation.
+
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ashwithpoojary98/javaflutterfinder)
+[![GitHub stars](https://img.shields.io/github/stars/ashwithpoojary98/javaflutterfinder.svg?style=flat)](https://github.com/ashwithpoojary98/javaflutterfinder/stargazers)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat )](https://github.com/ashwithpoojary98/javaflutterfinder/pulls)
+[![GitHub forks](https://img.shields.io/github/forks/ashwithpoojary98/javaflutterfinder.svg?style=social&label=Fork)](https://github.com/ashwithpoojary98/javaflutterfinder/network)
 
 # maven-plugin
 [![Build Status](https://github.com/ashwithpoojary98/javaflutterfinder/actions/workflows/mavenbuild.yml/badge.svg)](https://github.com/ashwithpoojary98/javaflutterfinder/actions/workflows/mavenbuild.yml)
@@ -71,3 +76,9 @@ https://api.flutter.dev/flutter/flutter_test/CommonFinders-class.html
 
 ### More about flutter finder
 https://github.com/appium-userland/appium-flutter-driver
+
+## License
+
+appium_flutterfinder_java is released under [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2023 appium_flutterfinder_java
