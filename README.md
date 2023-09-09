@@ -58,6 +58,8 @@ public class FlutterFinderExampleTest {
     }
 }
 ```        
+### Automation setup
+https://dev.to/ashwithpoojary98/automating-flutter-app-using-flutter-appium-driver-1cmb
 
 ### list of finder
 1. byValueKey(String key)
