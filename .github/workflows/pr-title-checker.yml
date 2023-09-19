@@ -3,7 +3,7 @@ on:
   pull_request:
 
 jobs:
-  lint:
+  build:
     name: https://www.conventionalcommits.org
     runs-on: ubuntu-latest
     steps:
