@@ -43,7 +43,7 @@ public class FlutterElement extends RemoteWebElement {
      * @return Stringify map
      */
     private String serialize(final Map<String, Object> rawMap) {
-        final JsonPrimitive localInstance = new JsonPrimitive(false);
+        final JsonPrimitive localInstance = new JsonPrimitive(String.valueOf(false));
         Map<String, Object> tempMap = new HashMap<>();
         rawMap.forEach(
                 (key, value) -> {
@@ -51,6 +51,8 @@ public class FlutterElement extends RemoteWebElement {
                         tempMap.put(key, new JsonPrimitive(String.valueOf(value)));
                     } else if (value instanceof JsonElement) {
                         tempMap.put(key, value);
+                    } else if (value instanceof Map) {
+                        tempMap.put(key, gson.toJson(value));
                     } else {
                         tempMap.put(key, localInstance);
                     }
