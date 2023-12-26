@@ -15,8 +15,3 @@ jobs:
           distribution: 'temurin'
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
-
-      - name: Publish Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          path: ${{ github.workspace }}/**/${{github.artifactId}}_${{github.version}}.jar
