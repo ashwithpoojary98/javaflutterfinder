@@ -16,7 +16,8 @@ import java.util.regex.Pattern;
  * @author ashwith
  * @version 1.0.0
  */
-public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByAncestor, ByDescendant, BySemanticsLabel, PageBack {
+public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByAncestor, ByDescendant,
+        BySemanticsLabel, PageBack {
     RemoteWebDriver driver;
     FileDetector fileDetector;
     private static final String FINDER_TYPE = "finderType";
@@ -61,7 +62,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
 
     @Override
     public FlutterElement byToolTip(String toolTipText) {
-        FlutterElement flutterElement= new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement = new FlutterElement(ImmutableMap.of(
                 FINDER_TYPE, "ByTooltipMessage",
                 "text", toolTipText
         ));
@@ -72,7 +73,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
 
     @Override
     public FlutterElement byText(String input) {
-        FlutterElement flutterElement= new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement = new FlutterElement(ImmutableMap.of(
                 FINDER_TYPE, "ByText",
                 "text", input
         ));
@@ -82,7 +83,8 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
     }
 
     @Override
-    public FlutterElement byAncestor(FlutterElement of, FlutterElement matching, boolean matchRoot, boolean firstMatchOnly) {
+    public FlutterElement byAncestor(FlutterElement of, FlutterElement matching,
+                                     boolean matchRoot, boolean firstMatchOnly) {
         Map<String, Object> matchIdentifier = new HashMap<>(ImmutableMap.of(
                 FINDER_TYPE, "Ancestor",
                 "matchRoot", matchRoot,
@@ -90,14 +92,15 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
         ));
         matchIdentifier.put("of", of.getRawMap());
         matchIdentifier.put("matching", matching.getRawMap());
-        FlutterElement flutterElement= new FlutterElement(matchIdentifier);
+        FlutterElement flutterElement = new FlutterElement(matchIdentifier);
         flutterElement.setParent(driver);
         flutterElement.setFileDetector(fileDetector);
         return flutterElement;
     }
 
     @Override
-    public FlutterElement byDescendant(FlutterElement of, FlutterElement matching, boolean matchRoot, boolean firstMatchOnly) {
+    public FlutterElement byDescendant(FlutterElement of, FlutterElement matching,
+                                       boolean matchRoot, boolean firstMatchOnly) {
         Map<String, Object> matchIdentifier = new HashMap<>(ImmutableMap.of(
                 FINDER_TYPE, "Descendant",
                 "matchRoot", matchRoot,
@@ -105,7 +108,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
         ));
         matchIdentifier.put("of", of.getRawMap());
         matchIdentifier.put("matching", matching.getRawMap());
-        FlutterElement flutterElement= new FlutterElement(matchIdentifier);
+        FlutterElement flutterElement = new FlutterElement(matchIdentifier);
         flutterElement.setParent(driver);
         flutterElement.setFileDetector(fileDetector);
         return flutterElement;
@@ -113,7 +116,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
 
     @Override
     public FlutterElement bySemanticsLabel(String label) {
-        FlutterElement flutterElement= new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement = new FlutterElement(ImmutableMap.of(
                 FINDER_TYPE, "BySemanticsLabel",
                 "isRegExp", false,
                 "label", label
@@ -125,7 +128,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
 
     @Override
     public FlutterElement bySemanticsLabel(Pattern label) {
-        FlutterElement flutterElement =new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement = new FlutterElement(ImmutableMap.of(
                 FINDER_TYPE, "BySemanticsLabel",
                 "isRegExp", true,
                 "label", label.toString()
