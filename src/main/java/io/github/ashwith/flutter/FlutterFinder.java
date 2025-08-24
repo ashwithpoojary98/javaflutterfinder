@@ -1,8 +1,14 @@
 package io.github.ashwith.flutter;
 
 
-import com.google.common.collect.ImmutableMap;
-import io.github.ashwith.flutter.finders.*;
+import io.github.ashwith.flutter.finders.ByAncestor;
+import io.github.ashwith.flutter.finders.ByDescendant;
+import io.github.ashwith.flutter.finders.BySemanticsLabel;
+import io.github.ashwith.flutter.finders.ByText;
+import io.github.ashwith.flutter.finders.ByToolTip;
+import io.github.ashwith.flutter.finders.ByType;
+import io.github.ashwith.flutter.finders.ByValueKey;
+import io.github.ashwith.flutter.finders.PageBack;
 import org.openqa.selenium.remote.FileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -29,7 +35,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
 
     @Override
     public FlutterElement byValueKey(String key) {
-        FlutterElement flutterElement = new FlutterElement(ImmutableMap
+        FlutterElement flutterElement = new FlutterElement(Map
                 .of(FINDER_TYPE, "ByValueKey",
                         "keyValueType", "String",
                         "keyValueString", key));
@@ -40,7 +46,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
 
     @Override
     public FlutterElement byValueKey(int key) {
-        FlutterElement flutterElement = new FlutterElement(ImmutableMap
+        FlutterElement flutterElement = new FlutterElement(Map
                 .of(FINDER_TYPE, "ByValueKey",
                         "keyValueType", "int",
                         "keyValueString", key));
@@ -51,7 +57,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
 
     @Override
     public FlutterElement byType(String type) {
-        FlutterElement flutterElement = new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement = new FlutterElement(Map.of(
                 FINDER_TYPE, "ByType",
                 "type", type
         ));
@@ -62,7 +68,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
 
     @Override
     public FlutterElement byToolTip(String toolTipText) {
-        FlutterElement flutterElement = new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement = new FlutterElement(Map.of(
                 FINDER_TYPE, "ByTooltipMessage",
                 "text", toolTipText
         ));
@@ -73,7 +79,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
 
     @Override
     public FlutterElement byText(String input) {
-        FlutterElement flutterElement = new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement = new FlutterElement(Map.of(
                 FINDER_TYPE, "ByText",
                 "text", input
         ));
@@ -85,7 +91,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
     @Override
     public FlutterElement byAncestor(FlutterElement of, FlutterElement matching,
                                      boolean matchRoot, boolean firstMatchOnly) {
-        Map<String, Object> matchIdentifier = new HashMap<>(ImmutableMap.of(
+        Map<String, Object> matchIdentifier = new HashMap<>(Map.of(
                 FINDER_TYPE, "Ancestor",
                 "matchRoot", matchRoot,
                 "firstMatchOnly", firstMatchOnly
@@ -101,7 +107,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
     @Override
     public FlutterElement byDescendant(FlutterElement of, FlutterElement matching,
                                        boolean matchRoot, boolean firstMatchOnly) {
-        Map<String, Object> matchIdentifier = new HashMap<>(ImmutableMap.of(
+        Map<String, Object> matchIdentifier = new HashMap<>(Map.of(
                 FINDER_TYPE, "Descendant",
                 "matchRoot", matchRoot,
                 "firstMatchOnly", firstMatchOnly
@@ -116,7 +122,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
 
     @Override
     public FlutterElement bySemanticsLabel(String label) {
-        FlutterElement flutterElement = new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement = new FlutterElement(Map.of(
                 FINDER_TYPE, "BySemanticsLabel",
                 "isRegExp", false,
                 "label", label
@@ -128,7 +134,7 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
 
     @Override
     public FlutterElement bySemanticsLabel(Pattern label) {
-        FlutterElement flutterElement = new FlutterElement(ImmutableMap.of(
+        FlutterElement flutterElement = new FlutterElement(Map.of(
                 FINDER_TYPE, "BySemanticsLabel",
                 "isRegExp", true,
                 "label", label.toString()
@@ -140,6 +146,6 @@ public class FlutterFinder implements ByValueKey, ByType, ByToolTip, ByText, ByA
 
     @Override
     public FlutterElement pageBack() {
-        return new FlutterElement(ImmutableMap.of(FINDER_TYPE, "PageBack"));
+        return new FlutterElement(Map.of(FINDER_TYPE, "PageBack"));
     }
 }

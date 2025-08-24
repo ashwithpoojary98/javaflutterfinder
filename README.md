@@ -15,7 +15,7 @@ Add maven dependency to pom.xml
 <dependency>
     <groupId>io.github.ashwithpoojary98</groupId>
     <artifactId>appium_flutterfinder_java</artifactId>
-    <version>1.0.9</version>
+    <version>1.0.12</version>
 </dependency>
 ```
 
@@ -83,4 +83,4 @@ https://github.com/appium-userland/appium-flutter-driver
 
 appium_flutterfinder_java is released under [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2023 appium_flutterfinder_java
+Copyright (c) 2025 appium_flutterfinder_java
