@@ -33,24 +33,5 @@ jobs:
           gpg-private-key: ${{ env.GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ env.GPG_PASSPHRASE }}
 
-      - name: 3. Update version
-        run: |
-          # Get current version from pom.xml
-          CURRENT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-          # Remove -SNAPSHOT if present
-          CURRENT_VERSION=${CURRENT_VERSION%-SNAPSHOT}
-          # Increment patch version
-          NEW_VERSION=$(echo $CURRENT_VERSION | awk -F. '{$NF = $NF + 1;} 1' | sed 's/ /./g')
-          # Update pom.xml with new version
-          mvn versions:set -DnewVersion=$NEW_VERSION
-          mvn versions:commit
-
-      - name: 4. Commit version update
-        run: |
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          git commit -am "Bump version [skip ci]"
-          git push
-
-      - name: 5. Deploy to Maven Central Portal
+      - name: 3. Deploy to Maven Central Portal
         run: mvn clean deploy -P release --batch-mode
