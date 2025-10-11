@@ -33,5 +33,12 @@ jobs:
           gpg-private-key: ${{ env.GPG_PRIVATE_KEY }}
           gpg-passphrase: ${{ env.GPG_PASSPHRASE }}
 
-      - name: 3. Deploy to Maven Central Portal
+      - name: 3. Fix GPG
+        run: |
+          export GPG_TTY=$(tty)
+          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
+          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+          gpg-connect-agent reloadagent /bye
+
+      - name: 4. Deploy to Maven Central Portal
         run: mvn clean deploy -P release --batch-mode
